@@ -1,0 +1,63 @@
+#请填写"主服"或"登录服"
+TheIs: "登录服"
+
+#服务器名字
+ServerName: "&b&l凌云监狱"
+
+#默认关服提示
+DefaultStopMessage: "&c&l服务器已关闭"
+
+#玩家进入服务器的给进服玩家的提示
+PlayerJoinSendMessage:
+  - "欢迎进入服务器"
+
+#普通玩家进入服务器的全服提示
+PlayerJoinServerMessage: "&7[&f&l玩家&7]&e%ChengTools_NickName%&a进入了服务器"
+
+#普通玩家退出服务器的全服提示
+PlayerQuitServerMessage: "&7[&f&l玩家&7]&e%ChengTools_NickName%&c离开了服务器"
+
+#管理员进入服务器的全服提示
+AdminJoinServerMessage: "&7[&c&l管理员&7]&e%ChengTools_NickName%&a进入了服务器"
+
+#管理员退出服务器的全服提示
+AdminQuitServerMessage: "&7[&c&l管理员&7]&e%ChengTools_NickName%&c离开了服务器"
+
+#初始化背包
+InitializationInventory: true
+
+#Nick设置
+NickNameSetting:
+  #是否允许管理员使用nick
+  AllowAdminUsedNick: true
+  #是否允许普通玩家使用nick
+  AllowPlayerUsedNick: false
+
+#ColorChat设置
+ColorChatSetting:
+  #是否允许管理员使用ColorChat
+  AllowAdminUsedColorChat: true
+  #是否允许普通玩家使用ColorChat
+  AllowPlayerUsedColorChat: true
+
+#ColorSignSetting设置
+ColorSignSetting:
+  #是否允许管理员使用ColorSign
+  AllowAdminUsedColorSign: true
+  #是否允许普通玩家使用ColorSign
+  AllowPlayerUsedColorSign: false
+
+#Spawn设置
+SpawnSetting:
+  #世界名称
+  WorldName: world
+  #X坐标
+  locationX: 0.5
+  #Y坐标
+  locationY: 80.0
+  #Z坐标
+  locationZ: 0.5
+
+#屏蔽词
+AntiKeyWords:
+  - "傻逼"

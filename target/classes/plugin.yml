@@ -1,0 +1,39 @@
+name: ChengTools
+version: '1.0Beta'
+main: cn.ChengZhi.main
+api-version: 1.16
+authors: [ ChengZhi ]
+description: ChengTools
+commands:
+  Nick:
+    description: 假玩家名字
+  CTReload:
+    description: 重载插件
+    permission: ChengTools.op
+  stop:
+    description: 关闭服务器
+    permission: ChengTools.op
+    permission-message: §c§l权限不足
+  gamemode:
+    aliases: [gm]
+    description: 更改游戏模式
+    permission: ChengTools.op
+    permission-message: §c§l权限不足
+  sun:
+    description: 一键晴天
+    permission: ChengTools.op
+    permission-message: §c§l权限不足
+  setspawn:
+    description: 设置主城位置
+    permission: ChengTools.op
+    permission-message: §c§l权限不足
+  spawn:
+    description: 返回主城
+  day:
+    description: 一键天亮
+    permission: ChengTools.op
+    permission-message: §c§l权限不足
+permissions:
+  ChengTools.op:
+    description: op默认拥有的权限
+    default: op
