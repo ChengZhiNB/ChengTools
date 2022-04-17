@@ -43,60 +43,63 @@ public class PlayerJoin_Event implements Listener {
             event.setJoinMessage(ChatColor.translateAlternateColorCodes('&', PlaceholderAPI.setPlaceholders(player, PlayerJoinMessage)));
         }
 
+        boolean InitializationInventory = main.instance.getConfig().getBoolean("InitializationInventory");
         boolean player_AlreadyInitializationInventory = main.instance.getConfig().getBoolean(player.getName() + "_AlreadyInitializationInventory");
-        if (!player_AlreadyInitializationInventory) {
-            if (Objects.equals(TheIs, "登录服")) {
-                ItemStack JoinServer = new ItemStack(Material.CLOCK);
-                ItemMeta JoinServer_Meta = JoinServer.getItemMeta();
-                Objects.requireNonNull(JoinServer_Meta).setDisplayName(ChatColor.translateAlternateColorCodes('&', "&6&l跨服&a&l菜单"));
-                JoinServer.setItemMeta(JoinServer_Meta);
-                player.getInventory().addItem(JoinServer);
-                main.instance.getConfig().set(player.getName() + "_AlreadyInitializationInventory", true);
-                main.instance.saveConfig();
-                main.instance.reloadConfig();
-            } else {
-                ItemStack HELMET = new ItemStack(Material.LEATHER_HELMET);
-                ItemMeta HELMET_Meta = HELMET.getItemMeta();
-                Objects.requireNonNull(HELMET_Meta).setUnbreakable(true);
-                HELMET.setItemMeta(HELMET_Meta);
+        if (InitializationInventory) {
+            if (!player_AlreadyInitializationInventory) {
+                if (Objects.equals(TheIs, "登录服")) {
+                    ItemStack JoinServer = new ItemStack(Material.CLOCK);
+                    ItemMeta JoinServer_Meta = JoinServer.getItemMeta();
+                    Objects.requireNonNull(JoinServer_Meta).setDisplayName(ChatColor.translateAlternateColorCodes('&', "&6&l跨服&a&l菜单"));
+                    JoinServer.setItemMeta(JoinServer_Meta);
+                    player.getInventory().addItem(JoinServer);
+                    main.instance.getConfig().set(player.getName() + "_AlreadyInitializationInventory", true);
+                    main.instance.saveConfig();
+                    main.instance.reloadConfig();
+                } else {
+                    ItemStack HELMET = new ItemStack(Material.LEATHER_HELMET);
+                    ItemMeta HELMET_Meta = HELMET.getItemMeta();
+                    Objects.requireNonNull(HELMET_Meta).setUnbreakable(true);
+                    HELMET.setItemMeta(HELMET_Meta);
 
-                ItemStack CHESTPLATE = new ItemStack(Material.LEATHER_CHESTPLATE);
-                ItemMeta CHESTPLATE_Meta = CHESTPLATE.getItemMeta();
-                Objects.requireNonNull(CHESTPLATE_Meta).setUnbreakable(true);
-                CHESTPLATE.setItemMeta(CHESTPLATE_Meta);
+                    ItemStack CHESTPLATE = new ItemStack(Material.LEATHER_CHESTPLATE);
+                    ItemMeta CHESTPLATE_Meta = CHESTPLATE.getItemMeta();
+                    Objects.requireNonNull(CHESTPLATE_Meta).setUnbreakable(true);
+                    CHESTPLATE.setItemMeta(CHESTPLATE_Meta);
 
-                ItemStack LEGGINGS = new ItemStack(Material.LEATHER_LEGGINGS);
-                ItemMeta LEGGINGS_Meta = LEGGINGS.getItemMeta();
-                Objects.requireNonNull(LEGGINGS_Meta).setUnbreakable(true);
-                LEGGINGS.setItemMeta(LEGGINGS_Meta);
+                    ItemStack LEGGINGS = new ItemStack(Material.LEATHER_LEGGINGS);
+                    ItemMeta LEGGINGS_Meta = LEGGINGS.getItemMeta();
+                    Objects.requireNonNull(LEGGINGS_Meta).setUnbreakable(true);
+                    LEGGINGS.setItemMeta(LEGGINGS_Meta);
 
-                ItemStack BOOTS = new ItemStack(Material.LEATHER_BOOTS);
-                ItemMeta BOOTS_Meta = BOOTS.getItemMeta();
-                Objects.requireNonNull(BOOTS_Meta).setUnbreakable(true);
-                BOOTS.setItemMeta(BOOTS_Meta);
+                    ItemStack BOOTS = new ItemStack(Material.LEATHER_BOOTS);
+                    ItemMeta BOOTS_Meta = BOOTS.getItemMeta();
+                    Objects.requireNonNull(BOOTS_Meta).setUnbreakable(true);
+                    BOOTS.setItemMeta(BOOTS_Meta);
 
-                ItemStack PICKAXE = new ItemStack(Material.DIAMOND_PICKAXE);
-                ItemMeta PICKAXE_Meta = PICKAXE.getItemMeta();
-                Objects.requireNonNull(PICKAXE_Meta).addEnchant(Enchantment.DIG_SPEED, 3, true);
-                Objects.requireNonNull(PICKAXE_Meta).setUnbreakable(true);
-                PICKAXE.setItemMeta(PICKAXE_Meta);
+                    ItemStack PICKAXE = new ItemStack(Material.DIAMOND_PICKAXE);
+                    ItemMeta PICKAXE_Meta = PICKAXE.getItemMeta();
+                    Objects.requireNonNull(PICKAXE_Meta).addEnchant(Enchantment.DIG_SPEED, 3, true);
+                    Objects.requireNonNull(PICKAXE_Meta).setUnbreakable(true);
+                    PICKAXE.setItemMeta(PICKAXE_Meta);
 
-                ItemStack AXE = new ItemStack(Material.DIAMOND_AXE);
-                ItemMeta AXE_Meta = AXE.getItemMeta();
-                Objects.requireNonNull(AXE_Meta).addEnchant(Enchantment.DIG_SPEED, 3, true);
-                Objects.requireNonNull(AXE_Meta).setUnbreakable(true);
-                AXE.setItemMeta(AXE_Meta);
+                    ItemStack AXE = new ItemStack(Material.DIAMOND_AXE);
+                    ItemMeta AXE_Meta = AXE.getItemMeta();
+                    Objects.requireNonNull(AXE_Meta).addEnchant(Enchantment.DIG_SPEED, 3, true);
+                    Objects.requireNonNull(AXE_Meta).setUnbreakable(true);
+                    AXE.setItemMeta(AXE_Meta);
 
-                player.getInventory().addItem(HELMET);
-                player.getInventory().addItem(CHESTPLATE);
-                player.getInventory().addItem(LEGGINGS);
-                player.getInventory().addItem(BOOTS);
-                player.getInventory().addItem(PICKAXE);
-                player.getInventory().addItem(AXE);
+                    player.getInventory().addItem(HELMET);
+                    player.getInventory().addItem(CHESTPLATE);
+                    player.getInventory().addItem(LEGGINGS);
+                    player.getInventory().addItem(BOOTS);
+                    player.getInventory().addItem(PICKAXE);
+                    player.getInventory().addItem(AXE);
 
-                main.instance.getConfig().set(player.getName() + "_AlreadyInitializationInventory", true);
-                main.instance.saveConfig();
-                main.instance.reloadConfig();
+                    main.instance.getConfig().set(player.getName() + "_AlreadyInitializationInventory", true);
+                    main.instance.saveConfig();
+                    main.instance.reloadConfig();
+                }
             }
         }
 

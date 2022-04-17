@@ -6,7 +6,7 @@
 
     <groupId>ChengTools</groupId>
     <artifactId>ChengTools</artifactId>
-    <version>1.0Beta</version>
+    <version>1.0Beta2</version>
     <packaging>jar</packaging>
 
     <name>ChengTools</name>
