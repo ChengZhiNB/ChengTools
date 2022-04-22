@@ -16,9 +16,9 @@ public class spawn_Command implements CommandExecutor {
         if (sender instanceof Player) {
             Player player = (Player) sender;
             String worldName = main.instance.getConfig().getString("SpawnSetting.WorldName");
-            int locationX = main.instance.getConfig().getInt("SpawnSetting.locationX");
-            int locationY = main.instance.getConfig().getInt("SpawnSetting.locationY");
-            int locationZ = main.instance.getConfig().getInt("SpawnSetting.locationZ");
+            double locationX = main.instance.getConfig().getDouble("SpawnSetting.locationX");
+            double locationY = main.instance.getConfig().getDouble("SpawnSetting.locationY");
+            double locationZ = main.instance.getConfig().getDouble("SpawnSetting.locationZ");
             if (worldName == null) {
                 sender.sendMessage(ChatColor.translateAlternateColorCodes('&',"&c你好像还没有设置主城呢,使用/setspwan设置主城吧!"));
             }else {

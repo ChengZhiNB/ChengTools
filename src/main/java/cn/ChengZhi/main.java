@@ -5,6 +5,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.PluginDescriptionFile;
 import org.bukkit.plugin.java.JavaPlugin;
+import org.bukkit.scheduler.BukkitTask;
 
 import java.util.Objects;
 
@@ -40,13 +41,19 @@ public final class main extends JavaPlugin implements Listener {
 
         saveDefaultConfig();
         reloadConfig();
-        reloadConfig();
 
         Bukkit.getPluginManager().registerEvents(this, this);
         new PlaceholderAPI(this).register();
 
         descriptionFile = getDescription();
         getLogger().info("-----------ChengTools插件-----------");
+        BukkitTask TpaTime = (new Tpa_Time(this)).runTaskTimer(this, 0L, (20));
+        BukkitTask TpaDetect = (new Tpa_Detect(this)).runTaskTimer(this, 0L, (60 * 20));
+        if (getConfig().getBoolean("TimeMessageSetting.TimeMessage")) {
+            BukkitTask TimeMessage = (new TimeMessage(this)).runTaskTimer(this, 0L, (getConfig().getInt("TimeMessageSetting.TimeMessageTime") * 20L));
+            multi.SetTimeMessageIntTemp("TaskId",TimeMessage.getTaskId());
+        }
+        Bukkit.getPluginManager().registerEvents(new KickGUI_ClickGUI_Event(),this);
         Bukkit.getPluginManager().registerEvents(new PlayerJoin_Event(),this);
         Bukkit.getPluginManager().registerEvents(new PlayerQuit_Event(),this);
         Bukkit.getPluginManager().registerEvents(new PlayerChat_Event(),this);
@@ -59,6 +66,14 @@ public final class main extends JavaPlugin implements Listener {
         Objects.requireNonNull(getCommand("sun")).setExecutor(new sun_Command());
         Objects.requireNonNull(getCommand("spawn")).setExecutor(new spawn_Command());
         Objects.requireNonNull(getCommand("setspawn")).setExecutor(new setspawn_Command());
+        Objects.requireNonNull(getCommand("tpa")).setExecutor(new Tpa_Command());
+        Objects.requireNonNull(getCommand("tpaaccept")).setExecutor(new tpaAccept_Command());
+        Objects.requireNonNull(getCommand("tpadefuse")).setExecutor(new tpaDefuse_Command());
+        Objects.requireNonNull(getCommand("vanish")).setExecutor(new vanish_Command());
+        Objects.requireNonNull(getCommand("fly")).setExecutor(new fly_Command());
+        Objects.requireNonNull(getCommand("mute")).setExecutor(new mute_Command());
+        Objects.requireNonNull(getCommand("mute")).setExecutor(new unmute_Command());
+        Objects.requireNonNull(getCommand("kick")).setExecutor(new SuperKick_Command());
         getLogger().info("插件启动成功");
         getLogger().info("-----------ChengTools插件-----------");
     }

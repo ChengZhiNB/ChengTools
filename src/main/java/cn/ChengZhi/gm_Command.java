@@ -9,11 +9,13 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 public class gm_Command implements CommandExecutor {
     @Override
-    public boolean onCommand(@NotNull CommandSender sender, @NotNull Command comand, @NotNull String label, @NotNull String[] args) {
+    public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
         if (args.length == 1) {
             if (sender instanceof Player) {
                 String args1 = args[0];
@@ -58,7 +60,6 @@ public class gm_Command implements CommandExecutor {
 
                 if (args1.equalsIgnoreCase("0") || args1.equalsIgnoreCase("生存")  || args1.equalsIgnoreCase("survival")) {
                     player.setGameMode(GameMode.SURVIVAL);
-                    sender.sendMessage(ChatColor.translateAlternateColorCodes('&',"&a设置成功"));
                     player.sendMessage(ChatColor.translateAlternateColorCodes('&',"&f你的模式已被更改成 生存模式"));
                     for (Player AllPlayer : Bukkit.getOnlinePlayers()) {
                         if (AllPlayer.isOp()) {
@@ -150,5 +151,22 @@ public class gm_Command implements CommandExecutor {
             }
         }
         return false;
+    }
+
+    public List<String> onTabComplete(CommandSender commandSender, Command command, String s, String[] strings) {
+        List<String> tablist = new ArrayList<>();
+        tablist.add("冒险");
+        tablist.add("创造");
+        tablist.add("旁观");
+        tablist.add("生存");
+        if (strings.length == 0)
+            return tablist;
+        if (!strings[0].equalsIgnoreCase("冒险") &&
+                !strings[0].equalsIgnoreCase("创造") &&
+                !strings[0].equalsIgnoreCase("旁观") &&
+                !strings[0].equalsIgnoreCase("生存")) {
+            return tablist;
+        }
+        return null;
     }
 }

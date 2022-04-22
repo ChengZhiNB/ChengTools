@@ -14,6 +14,12 @@ public class Nick_Command implements CommandExecutor {
         if (args.length == 2) {
             String args1 = args[0];
             String args2 = args[1];
+            for (String AntiNickNames : main.instance.getConfig().getStringList("AntiNickNameList")) {
+                if (args1.equals(AntiNickNames)) {
+                    sender.sendMessage(ChatColor.translateAlternateColorCodes('&',"&c你不能Nick这个名字"));
+                    return false;
+                }
+            }
             if (sender.isOp()) {
                 if (main.instance.getConfig().getBoolean("NickNameSetting.AllowAdminUsedNick")) {
                     if (Bukkit.getPlayer(args1) == null) {
@@ -50,6 +56,12 @@ public class Nick_Command implements CommandExecutor {
         }else {
             if (args.length == 1) {
                 String args1 = args[0];
+                for (String AntiNickNames : main.instance.getConfig().getStringList("AntiNickNameList")) {
+                    if (args1.equals(AntiNickNames)) {
+                        sender.sendMessage(ChatColor.translateAlternateColorCodes('&',"&c你不能Nick这个名字"));
+                        return false;
+                    }
+                }
                 if (sender.isOp()) {
                     if (main.instance.getConfig().getBoolean("NickNameSetting.AllowAdminUsedNick")) {
                         if (sender instanceof Player) {

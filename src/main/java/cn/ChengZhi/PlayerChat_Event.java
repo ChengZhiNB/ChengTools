@@ -1,5 +1,6 @@
 package cn.ChengZhi;
 
+import me.clip.placeholderapi.PlaceholderAPI;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
@@ -39,6 +40,13 @@ public class PlayerChat_Event implements Listener {
                 }
                 return;
             }
+        }
+
+        if (Bukkit.getPluginManager().getPlugin("ChengToolsPlayerTitleExtend") != null) {
+            String PlayerTitle = PlaceholderAPI.setPlaceholders(player,"%ChengToolsPlayerTitleExtend_Title%");
+            String PlayerSuffix = PlaceholderAPI.setPlaceholders(player,"%ChengToolsPlayerTitleExtend_Suffix%");
+            String Title = ChatColor.translateAlternateColorCodes('&',PlayerTitle + " " + player.getDisplayName() + " " + PlayerSuffix + " ");
+            event.setFormat(Title + Message);
         }
     }
 }

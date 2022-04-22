@@ -2,7 +2,10 @@ package cn.ChengZhi;
 
 import me.clip.placeholderapi.expansion.PlaceholderExpansion;
 import org.bukkit.OfflinePlayer;
+import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
+
+import java.util.Objects;
 
 public class PlaceholderAPI extends PlaceholderExpansion {
 
@@ -27,11 +30,8 @@ public class PlaceholderAPI extends PlaceholderExpansion {
     @Override
     public String onRequest(OfflinePlayer player, String params) {
         if (params.equalsIgnoreCase("NickName")) {
-            if (main.instance.getConfig().getString(player.getName() + "_NickName") == null) {
-                return player.getName();
-            } else {
-                return main.instance.getConfig().getString(player.getName() + "_NickName");
-            }
+            Player player1 = player.getPlayer();
+            return Objects.requireNonNull(player1).getDisplayName();
         }
         return null;
     }

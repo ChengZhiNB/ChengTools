@@ -7,6 +7,14 @@ description: ChengTools
 commands:
   Nick:
     description: 假玩家名字
+  spawn:
+    description: 返回主城
+  tpa:
+    description: 传送请求
+  tpaaccept:
+    description: 接受传送请求
+  tpadefuse:
+    description: 拒绝传送请求
   CTReload:
     description: 重载插件
     permission: ChengTools.op
@@ -27,10 +35,29 @@ commands:
     description: 设置主城位置
     permission: ChengTools.op
     permission-message: §c§l权限不足
-  spawn:
-    description: 返回主城
   day:
     description: 一键天亮
+    permission: ChengTools.op
+    permission-message: §c§l权限不足
+  vanish:
+    aliases: [v]
+    description: 隐身
+    permission: ChengTools.op
+    permission-message: §c§l权限不足
+  fly:
+    description: 飞行
+    permission: ChengTools.op
+    permission-message: §c§l权限不足
+  mute:
+    description: 禁言
+    permission: ChengTools.op
+    permission-message: §c§l权限不足
+  unmute:
+    description: 解除禁言
+    permission: ChengTools.op
+    permission-message: §c§l权限不足
+  kick:
+    description: 更好的踢出
     permission: ChengTools.op
     permission-message: §c§l权限不足
 permissions:

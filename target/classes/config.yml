@@ -1,6 +1,3 @@
-#请填写"主服"或"登录服"
-TheIs: "登录服"
-
 #服务器名字
 ServerName: "&b&l凌云监狱"
 
@@ -12,19 +9,16 @@ PlayerJoinSendMessage:
   - "欢迎进入服务器"
 
 #普通玩家进入服务器的全服提示
-PlayerJoinServerMessage: "&7[&f&l玩家&7]&e%ChengTools_NickName%&a进入了服务器"
+PlayerJoinServerMessage: "&7[&f&l玩家&7]&e%PlayerName%&a进入了服务器"
 
 #普通玩家退出服务器的全服提示
-PlayerQuitServerMessage: "&7[&f&l玩家&7]&e%ChengTools_NickName%&c离开了服务器"
+PlayerQuitServerMessage: "&7[&f&l玩家&7]&e%PlayerName%&c离开了服务器"
 
 #管理员进入服务器的全服提示
-AdminJoinServerMessage: "&7[&c&l管理员&7]&e%ChengTools_NickName%&a进入了服务器"
+AdminJoinServerMessage: "&7[&c&l管理员&7]&e%PlayerName%&a进入了服务器"
 
 #管理员退出服务器的全服提示
-AdminQuitServerMessage: "&7[&c&l管理员&7]&e%ChengTools_NickName%&c离开了服务器"
-
-#初始化背包
-InitializationInventory: true
+AdminQuitServerMessage: "&7[&c&l管理员&7]&e%PlayerName%&c离开了服务器"
 
 #Nick设置
 NickNameSetting:
@@ -32,6 +26,9 @@ NickNameSetting:
   AllowAdminUsedNick: true
   #是否允许普通玩家使用nick
   AllowPlayerUsedNick: false
+  #禁止Nick的名称
+  AntiNickNameList:
+    - Small_Shark
 
 #ColorChat设置
 ColorChatSetting:
@@ -57,6 +54,16 @@ SpawnSetting:
   locationY: 80.0
   #Z坐标
   locationZ: 0.5
+
+#公告设置
+TimeMessageSetting:
+  #是否启动公告系统
+  TimeMessage: false
+  #发送公告间隔时间(单位秒)
+  TimeMessageTime: 60
+  #公告内容
+  Message:
+    - "&a欢迎使用橙式插件 - ChengTools"
 
 #屏蔽词
 AntiKeyWords:
