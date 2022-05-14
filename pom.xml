@@ -6,7 +6,7 @@
 
     <groupId>ChengTools</groupId>
     <artifactId>ChengTools</artifactId>
-    <version>1.1Beta1</version>
+    <version>1.2Beta1</version>
     <packaging>jar</packaging>
 
     <name>ChengTools</name>
@@ -85,11 +85,11 @@
             <version>2.11.1</version>
             <scope>provided</scope>
         </dependency>
-        <dependency>
-            <groupId>com.github.MilkBowl</groupId>
-            <artifactId>VaultAPI</artifactId>
-            <version>1.7</version>
-            <scope>provided</scope>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>com.github.MilkBowl</groupId>-->
+<!--            <artifactId>VaultAPI</artifactId>-->
+<!--            <version>1.7</version>-->
+<!--            <scope>provided</scope>-->
+<!--        </dependency>-->
     </dependencies>
 </project>

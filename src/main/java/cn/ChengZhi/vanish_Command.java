@@ -29,8 +29,7 @@ public class vanish_Command implements CommandExecutor {
                     }
                     player.removePotionEffect(PotionEffectType.INVISIBILITY);
                     player.sendMessage(ChatColor.GREEN + "你的隐身状态已被关闭");
-                    main.instance.getConfig().set(Objects.requireNonNull(player).getName() + "_Vanish",null);
-                    multi.SaveAndReloadConfig();
+                    multi.SetBooleanTemp(Objects.requireNonNull(player).getName() + "_Vanish",false);
                     sender.sendMessage(ChatColor.GREEN + "你已将" + flyPlayerName + "的隐身状态关闭");
                 }else {
                     for (Player AllPlayer : Bukkit.getOnlinePlayers()) {
@@ -39,8 +38,7 @@ public class vanish_Command implements CommandExecutor {
                     PotionEffect pot = new PotionEffect(PotionEffectType.INVISIBILITY, 99999, 255, true);
                     player.addPotionEffect(pot);
                     player.sendMessage(ChatColor.GREEN + "你的隐身状态已被开启");
-                    main.instance.getConfig().set(Objects.requireNonNull(player).getName() + "_Vanish",true);
-                    multi.SaveAndReloadConfig();
+                    multi.SetBooleanTemp(Objects.requireNonNull(player).getName() + "_Vanish",true);
                     sender.sendMessage(ChatColor.GREEN + "你已将" + flyPlayerName + "的隐身状态开启");
                 }
             }else {
@@ -52,8 +50,7 @@ public class vanish_Command implements CommandExecutor {
                             AllPlayer.showPlayer(main.instance,player);
                         }
                         player.removePotionEffect(PotionEffectType.INVISIBILITY);
-                        main.instance.getConfig().set(Objects.requireNonNull(player).getName() + "_Vanish",null);
-                        multi.SaveAndReloadConfig();
+                        multi.SetBooleanTemp(Objects.requireNonNull(player).getName() + "_Vanish",false);
                         sender.sendMessage(ChatColor.GREEN + "你已将" + PlayerName + "的隐身状态关闭");
                     }else {
                         for (Player AllPlayer : Bukkit.getOnlinePlayers()) {
@@ -61,8 +58,7 @@ public class vanish_Command implements CommandExecutor {
                         }
                         PotionEffect pot = new PotionEffect(PotionEffectType.INVISIBILITY, 99999, 255, true);
                         player.addPotionEffect(pot);
-                        main.instance.getConfig().set(Objects.requireNonNull(player).getName() + "_Vanish",true);
-                        multi.SaveAndReloadConfig();
+                        multi.SetBooleanTemp(Objects.requireNonNull(player).getName() + "_Vanish",true);
                         sender.sendMessage(ChatColor.GREEN + "你已将" + PlayerName + "的隐身状态开启");
                     }
                 }else {
@@ -83,8 +79,7 @@ public class vanish_Command implements CommandExecutor {
                     }
                     player.removePotionEffect(PotionEffectType.INVISIBILITY);
                     player.sendMessage(ChatColor.GREEN + "你的隐身状态已被关闭");
-                    main.instance.getConfig().set(Objects.requireNonNull(player).getName() + "_Vanish",null);
-                    multi.SaveAndReloadConfig();
+                    multi.SetBooleanTemp(Objects.requireNonNull(player).getName() + "_Vanish",false);
                     sender.sendMessage(ChatColor.GREEN + "你已将" + flyPlayerName + "的隐身状态关闭");
                 }else {
                     for (Player AllPlayer : Bukkit.getOnlinePlayers()) {
@@ -93,8 +88,7 @@ public class vanish_Command implements CommandExecutor {
                     PotionEffect pot = new PotionEffect(PotionEffectType.INVISIBILITY, 99999, 255, true);
                     player.addPotionEffect(pot);
                     player.sendMessage(ChatColor.GREEN + "你的隐身状态已被开启");
-                    main.instance.getConfig().set(Objects.requireNonNull(player).getName() + "_Vanish",true);
-                    multi.SaveAndReloadConfig();
+                    multi.SetBooleanTemp(Objects.requireNonNull(player).getName() + "_Vanish",true);
                     sender.sendMessage(ChatColor.GREEN + "你已将" + flyPlayerName + "的隐身状态开启");
                 }
             }else {

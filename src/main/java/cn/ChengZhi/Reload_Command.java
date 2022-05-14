@@ -12,10 +12,10 @@ public class Reload_Command implements CommandExecutor {
     @Override
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
         main.instance.reloadConfig();
-        Bukkit.getScheduler().cancelTask(multi.GetTimeMessageTemp("TaskId"));
+        Bukkit.getScheduler().cancelTask(multi.GetIntTemp("TaskId"));
         if (main.instance.getConfig().getBoolean("TimeMessageSetting.TimeMessage")) {
             BukkitTask TimeMessage = (new TimeMessage(main.instance)).runTaskTimer(main.instance, 0L, (main.instance.getConfig().getInt("TimeMessageSetting.TimeMessageTime") * 20L));
-            multi.SetTimeMessageIntTemp("TaskId",TimeMessage.getTaskId());
+            multi.SetIntTemp("TimeMessageTaskId",TimeMessage.getTaskId());
         }
         sender.sendMessage(ChatColor.translateAlternateColorCodes('&',"&a重载完成!"));
         return false;

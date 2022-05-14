@@ -65,6 +65,20 @@ TimeMessageSetting:
   Message:
     - "&a欢迎使用橙式插件 - ChengTools"
 
+#Feed命令设置
+FeedCommandSetting:
+  #是否允许管理员使用Feed命令
+  AllowAdminUsedFeedCommand: true
+  #是否允许普通玩家使用Feed命令
+  AllowPlayerUsedFeedCommand: false
+
+#Heal命令设置
+HealCommandSetting:
+  #是否允许管理员使用Heal命令
+  AllowAdminUsedHealCommand: true
+  #是否允许普通玩家使用Heal命令
+  AllowPlayerUsedHealCommand: false
+
 #屏蔽词
 AntiKeyWords:
   - "傻逼"

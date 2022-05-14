@@ -33,9 +33,9 @@ public class Tpa_Command implements CommandExecutor {
                     String PlayerName = player.getName();
                     player.sendMessage(ChatColor.translateAlternateColorCodes('&',"&a传送请求已发送"));
                     TpaPlayer.sendMessage(ChatColor.translateAlternateColorCodes('&',"&7--------------&9Tpa系统&7--------------\n&a玩家:" + PlayerName + "想来你这里看看\n&a同意/tpaAccept "+ PlayerName + "   " + "&c拒绝/tpaRefuse " + PlayerName + "\n&7--------------&9Tpa系统&7--------------\n"));
-                    main.instance.getConfig().set(PlayerName + "_Temp_TpaPlayerName",TpaPlayer.getName());
-                    main.instance.getConfig().set(PlayerName + "_Temp_Tpa",false);
-                    main.instance.getConfig().set(PlayerName + "_Temp_TpaTime",0);
+                    multi.SetStringTemp(PlayerName + "_Temp_TpaPlayerName",TpaPlayer.getName());
+                    multi.SetBooleanTemp(PlayerName + "_Temp_Tpa",false);
+                    multi.SetIntTemp(PlayerName + "_Temp_TpaTime",0);
                 }
             }else {
                 sender.sendMessage(ChatColor.translateAlternateColorCodes('&',"&c用法错误,用法:/tpa <玩家ID>"));

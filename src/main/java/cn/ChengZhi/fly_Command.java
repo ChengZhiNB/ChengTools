@@ -21,30 +21,26 @@ public class fly_Command implements CommandExecutor {
                     return false;
                 }
                 Player player = Bukkit.getPlayer(flyPlayerName);
-                if (main.instance.getConfig().getBoolean(Objects.requireNonNull(player).getName() + "_Fly")) {
+                if (multi.getBooleanTemp(Objects.requireNonNull(player).getName() + "_Fly")) {
                     player.setAllowFlight(false);
-                    main.instance.getConfig().set(Objects.requireNonNull(player).getName() + "_Fly",null);
-                    multi.SaveAndReloadConfig();
+                    multi.SetBooleanTemp(Objects.requireNonNull(player).getName() + "_Fly",false);
                     sender.sendMessage(ChatColor.GREEN + "你已将" + flyPlayerName + "的飞行模式关闭");
                 }else {
                     player.setAllowFlight(true);
-                    main.instance.getConfig().set(Objects.requireNonNull(player).getName() + "_Fly",player.getAllowFlight());
-                    multi.SaveAndReloadConfig();
+                    multi.SetBooleanTemp(Objects.requireNonNull(player).getName() + "_Fly",player.getAllowFlight());
                     sender.sendMessage(ChatColor.GREEN + "你已将" + flyPlayerName + "的飞行模式开启");
                 }
             }else {
                 if (args.length == 0) {
                     Player player = (Player) sender;
                     String PlayerName = player.getName();
-                    if (main.instance.getConfig().getBoolean(Objects.requireNonNull(player).getName() + "_Fly")) {
+                    if (multi.getBooleanTemp(Objects.requireNonNull(player).getName() + "_Fly")) {
                         player.setAllowFlight(false);
-                        main.instance.getConfig().set(Objects.requireNonNull(player).getName() + "_Fly",null);
-                        multi.SaveAndReloadConfig();
+                        multi.SetBooleanTemp(Objects.requireNonNull(player).getName() + "_Fly",false);
                         sender.sendMessage(ChatColor.GREEN + "你已将" + PlayerName + "的飞行模式关闭");
                     }else {
                         player.setAllowFlight(true);
-                        main.instance.getConfig().set(Objects.requireNonNull(player).getName() + "_Fly",player.getAllowFlight());
-                        multi.SaveAndReloadConfig();
+                        multi.SetBooleanTemp(Objects.requireNonNull(player).getName() + "_Fly",player.getAllowFlight());
                         sender.sendMessage(ChatColor.GREEN + "你已将" + PlayerName + "的飞行模式开启");
                     }
                 }else {
@@ -59,15 +55,13 @@ public class fly_Command implements CommandExecutor {
                     return false;
                 }
                 Player player = Bukkit.getPlayer(flyPlayerName);
-                if (main.instance.getConfig().getBoolean(Objects.requireNonNull(player).getName() + "_Fly")) {
+                if (multi.getBooleanTemp(Objects.requireNonNull(player).getName() + "_Fly")) {
                     player.setAllowFlight(false);
-                    main.instance.getConfig().set(Objects.requireNonNull(player).getName() + "_Fly",null);
-                    multi.SaveAndReloadConfig();
+                    multi.SetBooleanTemp(Objects.requireNonNull(player).getName() + "_Fly",false);
                     sender.sendMessage(ChatColor.GREEN + "你已将" + flyPlayerName + "的飞行模式关闭");
                 }else {
                     player.setAllowFlight(true);
-                    main.instance.getConfig().set(Objects.requireNonNull(player).getName() + "_Fly",player.getAllowFlight());
-                    multi.SaveAndReloadConfig();
+                    multi.SetBooleanTemp(Objects.requireNonNull(player).getName() + "_Fly",player.getAllowFlight());
                     sender.sendMessage(ChatColor.GREEN + "你已将" + flyPlayerName + "的飞行模式开启");
                 }
             }else {
